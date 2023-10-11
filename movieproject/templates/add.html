@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center">Add a New Movie</h2>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">Movie Name</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Enter movie name">
+                        </div>
+                        <div class="form-group">
+                            <label for="desc">Movie Description</label>
+                            <input type="text" name="desc" class="form-control" id="desc" placeholder="Enter movie description">
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Release Year</label>
+                            <input type="text" name="year" class="form-control" id="year" placeholder="Enter release year">
+                        </div>
+                        <div class="form-group">
+                            <label for="img">Upload Image</label>
+                            <input type="file" name="img" class="form-control-file" id="img">
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
